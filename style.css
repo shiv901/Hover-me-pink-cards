@@ -26,7 +26,6 @@ body {
   background: #fff;
   position: relative;
   height:250px;
-  border-radius: 0.7em;
   overflow: hidden;
 }
 
@@ -51,7 +50,7 @@ body {
 
 
 .container .card .imgbg img {
-  width:15%;
+  width:13%;
   transition: inherit;
 }
 .container .card:hover .imgbg img {
@@ -59,7 +58,7 @@ body {
 }
 .container .card:hover .imgbg{
   top: 50%;
-  left:7%;
+  left:23%;
   height: 150px;
   width: 150px;
   background:#ff0057;
@@ -77,68 +76,41 @@ body {
   color: rgba(255, 255, 255, 0.05);
   position: absolute;
   left: 0;
-  bottom: 15px;
-  text-align: center;
+  bottom: 250px;
   width: 100%;
+  text-align: center;
   font-weight: 700;
 }
 
 .content{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.content h3{
   transform: translate(-50%,-50%);
   position: absolute;
-  font-weight: 700;
-  top:27%;
   left: 10%;
-  opacity: 0;
-  transition: left 0.6s ease, opacity 0.9s ease;
-  pointer-events: none;
-  width:102px;
-}
-.card:hover .content h3{
-  opacity: 1;
-  left: 41%
-}
-
-.content p{
-  transform: translate(-50%,-50%);
-  position: absolute;
-  top: 43%;
-  left: 10%;
-  width: 250px;
-  opacity: 0;
-  transition: left 0.6s 0.1s ease, opacity 0.6s 0.1s ease;
+  top:50%;
+  opacity:0;
+  transition: left 0.6s ease, opacity 1s ease;
+  width:255px;
   pointer-events: none;
 }
-.card:hover .content p{
+
+.card:hover .content{
+  left:72%;
   opacity: 1;
-  left:60%;
+  pointer-events: all;
 }
-
-.content a{
-  transform: translate(-50%,-50%);
-  position: absolute;
-  top: 75%;
-  left: 10%;
-  opacity: 0;
-  transition: left 0.6s 0.2s ease, opacity 0.5s 0.2s ease;
-  pointer-events: none;
-}
-.card:hover .content a{
-  opacity: 1;
-  left:42%;
-}
-
-
 
 .content h3 {
   font-size: 24px;
+}
+
+
+.content p {
+  margin: 0.75em 0
+}
+
+.content *::selection{
+  color:#fff;
+  background: #ff0057;
 }
 
 .content a {
@@ -148,13 +120,7 @@ body {
   color:#fff;
   background: #333;
   border-radius: 2em;
-}
-
-.content p {
-  margin: 0.75em 0
-}
-
-.content *::selection{
-  color:#fff;
-  background: #ff0057;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
 }
