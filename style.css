@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -5,27 +6,27 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   background: #222;
 }
 
 .container {
   margin: 2em auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  width:1000px;
+  width:1100px;
   flex-wrap: wrap;  
 }
 
 .card{
   display: flex;
-  width: 40%;
+  width: 45%;
   margin: 1.5em 1.5em;
   background: #fff;
   position: relative;
   height:250px;
-  border-radius: 0.7em;
+  overflow: hidden;
 }
 
 
@@ -33,8 +34,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width:100%;
-  height:100%;
+  width:200%;
+  height:300%;
   background: #333;
   z-index: 1;
   overflow: hidden;
@@ -44,19 +45,20 @@ body {
   text-align: center;
   transition: 0.5s ease;
   transform: translate(-50%,-50%);
-  border-radius: 0.5em;
+  border-radius: 50%;
 }
 
 
 .container .card .imgbg img {
-  width:30%;
+  width:13%;
   transition: inherit;
-
 }
-
+.container .card:hover .imgbg img {
+  width:35%
+}
 .container .card:hover .imgbg{
   top: 50%;
-  left:0;
+  left:23%;
   height: 150px;
   width: 150px;
   background:#ff0057;
@@ -74,28 +76,41 @@ body {
   color: rgba(255, 255, 255, 0.05);
   position: absolute;
   left: 0;
-  bottom: 15px;
-  text-align: center;
+  bottom: 250px;
   width: 100%;
-  font-weight: 600;
+  text-align: center;
+  font-weight: 700;
 }
 
-.content {
+.content{
   transform: translate(-50%,-50%);
   position: absolute;
-  left: 40%;
-  top: 50%;
-  opacity: 0;
-  transition: left 0.6s ease, opacity 0.9s ease;
+  left: 10%;
+  top:50%;
+  opacity:0;
+  transition: left 0.6s ease, opacity 1s ease;
+  width:255px;
+  pointer-events: none;
 }
 
-.card:hover .content {
+.card:hover .content{
+  left:72%;
   opacity: 1;
-  left:50%
+  pointer-events: all;
 }
 
 .content h3 {
   font-size: 24px;
+}
+
+
+.content p {
+  margin: 0.75em 0
+}
+
+.content *::selection{
+  color:#fff;
+  background: #ff0057;
 }
 
 .content a {
@@ -105,13 +120,7 @@ body {
   color:#fff;
   background: #333;
   border-radius: 2em;
-}
-
-.content p {
-  margin: 0.75em 0
-}
-
-.content *::selection{
-  color:#fff;
-  background: #ff0057;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
 }
